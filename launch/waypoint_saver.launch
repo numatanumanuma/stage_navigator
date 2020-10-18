@@ -1,0 +1,5 @@
+<launch>
+
+  <node pkg="cirkit_waypoint_generator" name="cirkit_waypoint_saver" type="cirkit_waypoint_saver" output="screen"/>
+
+</launch>

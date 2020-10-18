@@ -1,0 +1,17 @@
+<launch>
+
+   <!--stage_ros-->
+   <node pkg="stage_ros" type="stageros" name="stageros" 
+            args="$(find stage_ros)/world/willow-erratic.world" respawn="false" >
+      <param name="base_watchdog_timeout" value="0.2"/>
+   </node>
+
+   <!-- rviz -->
+   <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find navigation_stage)/single_robot.rviz" /> -->
+
+   <!-- cmd_vel -->
+   <node name="teleop_turtle" pkg="turtlesim" type="turtle_teleop_key" >
+      <remap from="turtle1/cmd_vel" to="cmd_vel"/>
+   </node>
+
+</launch>
