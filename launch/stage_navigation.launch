@@ -11,7 +11,7 @@
       <param name="base_watchdog_timeout" value="0.2"/>
    </node>
 
-   <include file="$(find navigation_stage)/move_base_config/amcl_node.xml"/>  
+   <include file="$(find stage_navigator)/config/amcl_node.xml"/>  
 
    <!-- rviz -->
    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find stage_navigator)/rviz/navigation.rviz" />
