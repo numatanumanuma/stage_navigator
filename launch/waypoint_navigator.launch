@@ -1,11 +1,14 @@
 <launch>
 
-    <arg name="waypoint_filename" default="$(find stage_navigator)/waypoints/2020-10-19-00-59-07.csv" />
+    <arg name="waypoint_filename" default="$(find stage_navigator)/waypoints/sample.csv" />
     <arg name="start_waypoint" default="0"/>
 
     <node name="cirkit_waypoint_navigator_node" pkg="cirkit_waypoint_navigator" type="cirkit_waypoint_navigator_node" output="screen">
         <param name="waypointsfile" value="$(arg waypoint_filename)" />
         <param name="start_waypoint" value="$(arg start_waypoint)"/>
+        <param name="slowdown_speed" value="0.2"/>
+        <param name="speedup_speed" value="1.0"/>
+        <!-- <remap from="/move_base/goal" to="/bridge/goal"/> -->
     </node>
 
     <node pkg="cirkit_waypoint_generator" name="cirkit_waypoint_server" type="cirkit_waypoint_server" args="--load $(arg waypoint_filename)" output="screen"/>

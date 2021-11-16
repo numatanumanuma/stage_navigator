@@ -8,6 +8,14 @@
 
 cirkit_waypoint_managerをstage上でやってみるだけのやつ
 
+### cirkit_waypoint_managerデバッグ用
+
+~~~
+$ roslaunch stage_navigator stage_navigation.launch 
+
+$ roslaunch stage_navigator waypoint_navigator.launch 
+~~~
+
 ### waypointでナビゲーション
 
 ~~~
